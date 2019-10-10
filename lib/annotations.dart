@@ -1,0 +1,3 @@
+class Inherited {
+  const Inherited();
+}
