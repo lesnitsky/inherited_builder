@@ -258,6 +258,23 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
                 }).join(",")}
                 );'''),
             ),
+          )
+          ..methods.add(
+            Method((b) => b
+              ..annotations.add(refer('override'))
+              ..name = 'didUpdateWidget'
+              ..requiredParameters.add(
+                Parameter(
+                  (b) => b
+                    ..name = 'oldWidget'
+                    ..type = refer('Widget'),
+                ),
+              )
+              ..body = Code('''
+                ${dataFields.map((f) => "${f.name} = widget.${f.name};").join("")}
+
+                super.didUpdateWidget(oldWidget);
+                ''')),
           ),
       );
 
