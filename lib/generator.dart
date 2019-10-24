@@ -35,7 +35,7 @@ List<Field> generateFields(ClassElement element) {
         ..name = generateCallbackName(field.name)
         ..modifier = FieldModifier.final$
         ..type = refer('Function(${field.type.toString()})'));
-    }).toList()
+    }).toList(),
   ];
 }
 
@@ -118,7 +118,14 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
           ..constructors.add(
             generateConstructor(fields, requiredExclude: ['key']),
           )
-          ..fields.addAll([...fields])
+          ..fields.addAll([
+            ...fields,
+            Field(
+              (b) => b
+                ..name = 'oldModel'
+                ..type = refer(element.displayName),
+            ),
+          ])
           ..methods.addAll([
             Method(
               (b) => b
@@ -132,7 +139,16 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
                   ),
                 )
                 ..body = Code(
-                    'return ${dataFields.map((f) => 'oldWidget.${f.name} != ${f.name}').join('||')};'),
+                  '''
+                    final shouldNotify = ${dataFields.map((f) => 'oldWidget.${f.name} != ${f.name}').join('||')};
+
+                    if (shouldNotify) {
+                      oldModel = oldWidget.getModel();
+                    }
+
+                    return shouldNotify;
+                    ''',
+                ),
             ),
             Method(
               (b) => b
