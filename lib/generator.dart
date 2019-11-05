@@ -21,8 +21,10 @@ List<Field> getCallbackFields(List<Field> fields) =>
     fields.where((f) => isCallback(f)).toList();
 
 List<Field> generateFields(ClassElement element) {
+  final fields = element.fields.where((f) => !f.isStatic);
+
   return [
-    ...element.fields.map((field) {
+    ...fields.map((field) {
       return Field(
         (b) => b
           ..name = field.name
@@ -30,7 +32,7 @@ List<Field> generateFields(ClassElement element) {
           ..type = refer(field.type.toString()),
       );
     }).toList(),
-    ...element.fields.map((field) {
+    ...fields.map((field) {
       return Field((b) => b
         ..name = generateCallbackName(field.name)
         ..modifier = FieldModifier.final$
@@ -80,7 +82,6 @@ Constructor generateConstructor(
             Parameter(
               (b) => b
                 ..name = 'child'
-                ..annotations.add(refer('required'))
                 ..type = hasOwnChild ? null : refer('Widget')
                 ..toThis = hasOwnChild,
             ),
@@ -110,23 +111,45 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
       final fields = generateFields(element);
       final dataFields = getDataFields(fields);
       final callbackFields = getCallbackFields(fields);
+      final modelField = Field(
+        (b) => b
+          ..name = 'model'
+          ..modifier = FieldModifier.final$
+          ..type = refer(element.displayName),
+      );
+
+      final modelCtor =
+          '${element.name}(${dataFields.map((f) => "${f.name}: ${f.name}").join(",")});';
 
       final inheritedWidget = Class(
         (b) => b
           ..name = inheritedWidgetClassName
           ..extend = refer('InheritedWidget', 'package:flutter/widgets.dart')
           ..constructors.add(
-            generateConstructor(fields, requiredExclude: ['key']),
+            generateConstructor([...fields, modelField],
+                requiredExclude: ['key']),
           )
           ..fields.addAll([
             ...fields,
+            modelField,
             Field(
               (b) => b
-                ..name = 'oldModel'
+                ..name = '_oldModel'
+                ..static = true
                 ..type = refer(element.displayName),
             ),
           ])
           ..methods.addAll([
+            Method(
+              (b) => b
+                ..type = MethodType.getter
+                ..name = 'oldModel'
+                ..returns = refer(element.displayName)
+                ..lambda = true
+                ..body = Code(
+                  '$inheritedWidgetClassName._oldModel',
+                ),
+            ),
             Method(
               (b) => b
                 ..annotations.add(refer('override'))
@@ -143,7 +166,7 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
                     final shouldNotify = ${dataFields.map((f) => 'oldWidget.${f.name} != ${f.name}').join('||')};
 
                     if (shouldNotify) {
-                      oldModel = oldWidget.getModel();
+                      _oldModel = oldWidget.model;
                     }
 
                     return shouldNotify;
@@ -164,14 +187,6 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
                 )
                 ..body = Code(
                     'return context.inheritFromWidgetOfExactType($inheritedWidgetClassName);'),
-            ),
-            Method(
-              (b) => b
-                ..name = 'getModel'
-                ..returns = refer('${element.name}')
-                ..body = Code(
-                  'return ${element.name}(${dataFields.map((f) => "${f.name}: ${f.name}").join(",")});',
-                ),
             ),
             ...dataFields.map((f) {
               final name = f.name;
@@ -197,24 +212,35 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
       final statefulWidgetClassname = '${element.displayName}Builder';
       final stateClassname = '_${statefulWidgetClassname}State';
 
+      final builderField = Field(
+        (b) => b
+          ..name = 'builder'
+          ..modifier = FieldModifier.final$
+          ..type =
+              refer('Widget Function(BuildContext, ${element.displayName})'),
+      );
+
       final statefulWidget = Class(
         (b) => b
           ..name = statefulWidgetClassname
           ..extend = refer('StatefulWidget', 'package:flutter/widgets.dart')
           ..constructors.add(
             generateConstructor(
-              dataFields,
+              [...dataFields, builderField],
               superRequiresChild: false,
               hasOwnChild: true,
-              requiredExclude: ['key'],
+              requiredExclude: ['key', 'builder'],
             ),
           )
           ..fields.addAll([
             ...dataFields,
-            Field((b) => b
-              ..name = 'child'
-              ..modifier = FieldModifier.final$
-              ..type = refer('Widget'))
+            Field(
+              (b) => b
+                ..name = 'child'
+                ..modifier = FieldModifier.final$
+                ..type = refer('Widget'),
+            ),
+            builderField,
           ])
           ..methods.addAll([
             Method(
@@ -263,8 +289,11 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
                           refer('BuildContext', 'package:flutter/widgets.dart'),
                   ),
                 )
-                ..body = Code('''return $inheritedWidgetClassName(
-                  child: widget.child,
+                ..body = Code('''final model = $modelCtor
+                
+                return $inheritedWidgetClassName(
+                  model: model,
+                  child: (widget.builder ?? (_, __) => widget.child)(context, model),
                     ${dataFields.map((f) {
                   return "${f.name}: ${f.name}";
                 }).join(",")}
