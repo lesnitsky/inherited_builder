@@ -186,7 +186,7 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
                   ),
                 )
                 ..body = Code(
-                    'return context.inheritFromWidgetOfExactType($inheritedWidgetClassName);'),
+                    'return context.dependOnInheritedWidgetOfExactType<$inheritedWidgetClassName>();'),
             ),
             ...dataFields.map((f) {
               final name = f.name;
