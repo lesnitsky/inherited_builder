@@ -19,6 +19,8 @@ class Cart {
           return products[e.key] == e.value;
         });
   }
+
+  bool hasProduct(Product product) => products.containsKey(product.id);
 }
 
 extension CartActions on CartProvider {

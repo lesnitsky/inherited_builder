@@ -6,6 +6,8 @@ import 'package:app_reference_architecture/widgets/count_badge.dart';
 import 'package:app_reference_architecture/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
+import 'cart_page.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,14 @@ class HomePage extends StatelessWidget {
         title: Text('Fruit shop'),
         actions: <Widget>[
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ProductsBuilder(
+                  entries: [...fruits, ...vegetables],
+                  child: CartPage(),
+                ),
+              ));
+            },
             child: Padding(
               padding: const EdgeInsets.all(8.0).copyWith(left: 40),
               child: Row(
@@ -74,19 +83,6 @@ class HomePage extends StatelessWidget {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: RaisedButton.icon(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              color: Colors.green,
-              colorBrightness: Brightness.dark,
-              icon: Icon(Icons.shopping_cart),
-              label: Text('Checkout'),
-              onPressed: () {},
-            ),
-          )
         ],
       ),
     );
