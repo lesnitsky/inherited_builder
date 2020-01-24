@@ -12,6 +12,13 @@ class Cart {
 
   int getProductsCount(Product product) => this.products[product.id] ?? 0;
   int getTotalProductsCount() => this.products.values.fold(0, (t, v) => t + v);
+
+  bool equals(Cart other) {
+    return other.products.length == products.length &&
+        other.products.entries.every((e) {
+          return products[e.key] == e.value;
+        });
+  }
 }
 
 extension CartActions on CartProvider {

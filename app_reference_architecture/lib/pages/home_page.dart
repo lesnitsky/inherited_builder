@@ -1,3 +1,5 @@
+import 'package:app_reference_architecture/constants/fruits.dart';
+import 'package:app_reference_architecture/constants/vegetables.dart';
 import 'package:app_reference_architecture/entities/cart.dart';
 import 'package:app_reference_architecture/entities/products.dart';
 import 'package:app_reference_architecture/widgets/count_badge.dart';
@@ -7,8 +9,10 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final products = ProductsProvider.of(context).entries;
+    final productsProvider = ProductsProvider.of(context);
     final cart = CartProvider.of(context);
+
+    final products = productsProvider.entries;
 
     return Scaffold(
       appBar: AppBar(
@@ -38,6 +42,26 @@ class HomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlatButton(
+                color: productsProvider.entries == fruits ? Colors.blue : null,
+                child: Text('Fruits'),
+                onPressed: () {
+                  productsProvider.setEntries(fruits);
+                },
+              ),
+              FlatButton(
+                color:
+                    productsProvider.entries == vegetables ? Colors.blue : null,
+                child: Text('Vegetables'),
+                onPressed: () {
+                  productsProvider.setEntries(vegetables);
+                },
+              ),
+            ],
+          ),
           Expanded(
             flex: 1,
             child: ListView.builder(
