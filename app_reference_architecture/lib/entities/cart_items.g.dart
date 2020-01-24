@@ -70,7 +70,7 @@ class CartItemsBuilder extends StatefulWidget {
 
   final Widget child;
 
-  final Widget Function(BuildContext, CartItems) builder;
+  final Widget Function(BuildContext, CartItemsProvider) builder;
 
   @override
   _CartItemsBuilderState createState() {
@@ -96,7 +96,11 @@ class _CartItemsBuilderState extends State<CartItemsBuilder> {
 
     return CartItemsProvider(
         model: model,
-        child: (widget.builder ?? (_, __) => widget.child)(context, model),
+        child: widget.builder != null
+            ? Builder(
+                builder: (context) =>
+                    widget.builder(context, CartItemsProvider.of(context)))
+            : widget.child,
         products: products,
         cart: cart,
         onProductsChanged: (newValue) {

@@ -217,7 +217,7 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
           ..name = 'builder'
           ..modifier = FieldModifier.final$
           ..type =
-              refer('Widget Function(BuildContext, ${element.displayName})'),
+              refer('Widget Function(BuildContext, $inheritedWidgetClassName)'),
       );
 
       final statefulWidget = Class(
@@ -293,7 +293,8 @@ class InheritedGenerator extends GeneratorForAnnotation<Inherited> {
                 
                 return $inheritedWidgetClassName(
                   model: model,
-                  child: (widget.builder ?? (_, __) => widget.child)(context, model),
+                  child: widget.builder != null ?
+                    Builder(builder: (context) => widget.builder(context, $inheritedWidgetClassName.of(context))) : widget.child,
                     ${dataFields.map((f) {
                   return "${f.name}: ${f.name}";
                 }).join(",")}

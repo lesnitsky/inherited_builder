@@ -2,6 +2,7 @@ import 'package:app_reference_architecture/constants/fruits.dart';
 import 'package:app_reference_architecture/entities/cart.dart';
 import 'package:app_reference_architecture/entities/products.dart';
 import 'package:app_reference_architecture/pages/home_page.dart';
+import 'package:app_reference_architecture/services/checkout_service.dart';
 import 'package:app_reference_architecture/widgets/cart_persistance.dart';
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
@@ -22,13 +23,16 @@ class App extends StatelessWidget {
           return Container(color: Colors.white);
         }
 
-        return CartBuilder(
-          products: Map<String, int>.from(storage.getItem('products') ?? {}),
-          child: ProductsBuilder(
-            entries: fruits,
-            builder: (context, products) => MaterialApp(
-              debugShowCheckedModeBanner: false,
-              home: CartPersistance(child: HomePage()),
+        return CheckoutServiceBuilder(
+          backendUrl: 'https://api.lesnitsky.dev',
+          child: CartBuilder(
+            products: Map<String, int>.from(storage.getItem('products') ?? {}),
+            child: ProductsBuilder(
+              entries: fruits,
+              builder: (context, products) => MaterialApp(
+                debugShowCheckedModeBanner: false,
+                home: CartPersistance(child: HomePage()),
+              ),
             ),
           ),
         );

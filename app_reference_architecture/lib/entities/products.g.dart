@@ -52,7 +52,7 @@ class ProductsBuilder extends StatefulWidget {
 
   final Widget child;
 
-  final Widget Function(BuildContext, Products) builder;
+  final Widget Function(BuildContext, ProductsProvider) builder;
 
   @override
   _ProductsBuilderState createState() {
@@ -75,7 +75,11 @@ class _ProductsBuilderState extends State<ProductsBuilder> {
 
     return ProductsProvider(
         model: model,
-        child: (widget.builder ?? (_, __) => widget.child)(context, model),
+        child: widget.builder != null
+            ? Builder(
+                builder: (context) =>
+                    widget.builder(context, ProductsProvider.of(context)))
+            : widget.child,
         entries: entries,
         onEntriesChanged: (newValue) {
           setState(() {
