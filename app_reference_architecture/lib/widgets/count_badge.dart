@@ -6,18 +6,23 @@ class CountBadge extends StatelessWidget {
   const CountBadge({Key key, this.count}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        color: Colors.red,
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      constraints: BoxConstraints(minWidth: 20, maxHeight: 20),
-      child: Center(
-        child: Text(
-          count.toString(),
-        ),
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          constraints: BoxConstraints(minWidth: 40),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            color: Colors.red,
+          ),
+          child: Center(
+            child: Text(
+              count.toString(),
+            ),
+          ),
+        )
+      ],
     );
   }
 }

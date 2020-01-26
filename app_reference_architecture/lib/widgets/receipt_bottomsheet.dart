@@ -1,3 +1,4 @@
+import 'package:app_reference_architecture/entities/cart.dart';
 import 'package:app_reference_architecture/entities/checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -113,16 +114,21 @@ class _ReceiptBottomsheetState extends State<ReceiptBottomsheet> {
   @override
   void didChangeDependencies() {
     final checkoutProvider = CheckoutProvider.of(context);
+    final cart = CartProvider.of(context);
 
     if (checkoutProvider.oldModel?.receipt == null &&
-        checkoutProvider.model?.receipt != null) {
-      SchedulerBinding.instance.addPostFrameCallback((_) {
-        showModalBottomSheet(
+        checkoutProvider.model?.receipt != null &&
+        !cart.model.isEmpty) {
+      SchedulerBinding.instance.addPostFrameCallback((_) async {
+        await showModalBottomSheet(
           context: context,
           builder: (context) {
             return _buildModal(checkoutProvider);
           },
         );
+
+        cart.clear();
+        checkoutProvider.setReceipt(null);
       });
     }
 

@@ -21,6 +21,7 @@ class Cart {
   }
 
   bool hasProduct(Product product) => products.containsKey(product.id);
+  bool get isEmpty => products.isEmpty;
 }
 
 extension CartActions on CartProvider {
@@ -40,5 +41,9 @@ extension CartActions on CartProvider {
       ...this.products,
       '${product.id}': newCount.clamp(0, double.infinity),
     });
+  }
+
+  clear() {
+    this.setProducts({});
   }
 }

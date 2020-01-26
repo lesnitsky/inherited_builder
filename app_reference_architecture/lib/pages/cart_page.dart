@@ -69,46 +69,52 @@ class CartPage extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       flex: 1,
-                      child: ListView.builder(
-                        itemCount: entries.length,
-                        itemBuilder: (context, index) {
-                          final entry = entries[index];
+                      child: entries.length > 0
+                          ? ListView.builder(
+                              itemCount: entries.length,
+                              itemBuilder: (context, index) {
+                                final entry = entries[index];
 
-                          return ListTile(
-                            title: Text(entry.product.name),
-                            trailing: Text(entry.count.toString()),
-                          );
-                        },
-                      ),
+                                return ListTile(
+                                  title: Text(entry.product.name),
+                                  trailing: Text(entry.count.toString()),
+                                );
+                              },
+                            )
+                          : Center(
+                              child: Text('Cart is empty'),
+                            ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: RaisedButton.icon(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        color: _resolveButtonColor(checkoutProvider.model),
-                        colorBrightness: Brightness.dark,
-                        icon: !checkoutProvider.isLoading
-                            ? Icon(_resolveButtonIcon(checkoutProvider.model))
-                            : Container(
-                                width: 24,
-                                height: 20,
-                                padding: const EdgeInsets.only(right: 4),
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 1,
-                                  valueColor:
-                                      AlwaysStoppedAnimation(Colors.white),
+                    if (entries.length > 0)
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: RaisedButton.icon(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          color: _resolveButtonColor(checkoutProvider.model),
+                          colorBrightness: Brightness.dark,
+                          icon: !checkoutProvider.isLoading
+                              ? Icon(_resolveButtonIcon(checkoutProvider.model))
+                              : Container(
+                                  width: 24,
+                                  height: 20,
+                                  padding: const EdgeInsets.only(right: 4),
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 1,
+                                    valueColor:
+                                        AlwaysStoppedAnimation(Colors.white),
+                                  ),
                                 ),
-                              ),
-                        label: Text(_resolveButtonText(checkoutProvider.model)),
-                        onPressed: () {
-                          if (!checkoutProvider.isLoading &&
-                              !checkoutProvider.success)
-                            checkoutProvider.startCheckout();
-                        },
-                      ),
-                    )
+                          label:
+                              Text(_resolveButtonText(checkoutProvider.model)),
+                          onPressed: () {
+                            if (!checkoutProvider.isLoading &&
+                                !checkoutProvider.success)
+                              checkoutProvider.startCheckout();
+                          },
+                        ),
+                      )
                   ],
                 ),
               );
