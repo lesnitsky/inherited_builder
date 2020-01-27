@@ -30,6 +30,7 @@
       html,
       body {
         height: 100%;
+        overflow: hidden;
       }
 
       body {
@@ -126,6 +127,14 @@
           bottom: 60px;
         }
 
+        .code p {
+          font-size: 10px;
+        }
+
+        footer > * {
+          margin: 0;
+        }
+
         label {
           background: rgba(255, 255, 255, 0.2);
           color: rgba(200, 200, 200);
@@ -164,649 +173,158 @@
       Code
     </label>
     <section>
-      <div class="code">
-        <p>
-          <span style="color: rgb(198, 120, 221);">import</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(152, 195, 121);"
-            >'<span class="SpellE">package:flutter</span>/<span class="SpellE"
-              >material.dart</span
-            >'</span
-          ><span style="color: rgb(171, 178, 191);"></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(198, 120, 221);">import</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(152, 195, 121);"
-            >'<span class="SpellE">package:inherited_builder</span>/<span
-              class="SpellE"
-              >annotations.dart</span
-            >'</span
-          ><span style="color: rgb(171, 178, 191);"></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(198, 120, 221);">part</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(152, 195, 121);"
-            >'<span class="SpellE">main.g.dart</span>'</span
-          ><span style="color: rgb(171, 178, 191);"></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(198, 120, 221);">void</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(97, 175, 239);">main</span
-          ><span style="color: rgb(171, 178, 191);">() =&gt; </span
-          ><span class="SpellE"
-            ><span style="color: rgb(97, 175, 239);">runApp</span></span
-          ><span style="color: rgb(171, 178, 191);">(</span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">MyApp</span></span
-          ><span style="color: rgb(171, 178, 191);">())</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(198, 120, 221);">@Inherited</span
-          ><span style="color: rgb(171, 178, 191);">()</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(198, 120, 221);">class</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">AppState</span></span
-          ><span style="color: rgb(171, 178, 191);"> {</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">final</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">int</span></span
-          ><span style="color: rgb(171, 178, 191);"> count</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">AppState</span></span
-          ><span style="color: rgb(171, 178, 191);">({</span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">this</span
-            ><span style="color: rgb(171, 178, 191);">.count</span></span
-          ><span style="color: rgb(171, 178, 191);">})</span>
-        </p>
-
-        <p><span style="color: rgb(171, 178, 191);">}</span></p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(198, 120, 221);">class</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">MyApp</span></span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(198, 120, 221);">extends</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);"
-              >StatelessWidget</span
-            ></span
-          ><span style="color: rgb(171, 178, 191);"> {</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">@override</span
-          ><span style="color: rgb(171, 178, 191);"></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span style="color: rgb(229, 192, 123);">Widget</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(97, 175, 239);">build</span
-          ><span style="color: rgb(171, 178, 191);">(</span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">BuildContext</span></span
-          ><span style="color: rgb(171, 178, 191);"> context) {</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">return</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);"
-              >AppStateBuilder</span
-            ></span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >count</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(209, 154, 102);">0</span
-          ><span style="color: rgb(171, 178, 191);">,</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >child</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">MaterialApp</span></span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >title</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(152, 195, 121);"
-            >'Inherited Builder demo'</span
-          ><span style="color: rgb(171, 178, 191);">,</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >theme</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">ThemeData</span></span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            ><span class="SpellE">primarySwatch</span></span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">Colors</span
-            ><span style="color: rgb(171, 178, 191);">.blue</span></span
-          ><span style="color: rgb(171, 178, 191);">,</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp;</span
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >home</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">MyHomePage</span></span
-          ><span style="color: rgb(171, 178, 191);">(title</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(152, 195, 121);"
-            >'Inherited Builder demo'</span
-          ><span style="color: rgb(171, 178, 191);">),</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>)</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span>}</span
-          >
-        </p>
-
-        <p><span style="color: rgb(171, 178, 191);">}</span></p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(198, 120, 221);">class</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">MyHomePage</span></span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(198, 120, 221);">extends</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);"
-              >StatelessWidget</span
-            ></span
-          ><span style="color: rgb(171, 178, 191);"> {</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">final</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(229, 192, 123);">String</span
-          ><span style="color: rgb(171, 178, 191);"> title</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span class="SpellE"
-            ><span style="color: rgb(198, 120, 221);">const</span></span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">MyHomePage</span></span
-          ><span style="color: rgb(171, 178, 191);">({</span
-          ><span style="color: rgb(229, 192, 123);">Key</span
-          ><span style="color: rgb(171, 178, 191);"> key, </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">this</span
-            ><span style="color: rgb(171, 178, 191);">.title</span></span
-          ><span style="color: rgb(171, 178, 191);">}) </span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(229, 192, 123);">super</span
-          ><span style="color: rgb(171, 178, 191);">(key</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> key)</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">@override</span
-          ><span style="color: rgb(171, 178, 191);"></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span></span
-          ><span style="color: rgb(229, 192, 123);">Widget</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(97, 175, 239);">build</span
-          ><span style="color: rgb(171, 178, 191);">(</span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">BuildContext</span></span
-          ><span style="color: rgb(171, 178, 191);"> context) {</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">final</span
-          ><span style="color: rgb(171, 178, 191);">
-            <span class="SpellE">appStateProvider</span> </span
-          ><span style="color: rgb(86, 182, 194);">=</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">AppStateProvider</span
-            ><span style="color: rgb(171, 178, 191);">.</span
-            ><span style="color: rgb(97, 175, 239);">of</span></span
-          ><span style="color: rgb(171, 178, 191);">(context)</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">final</span
-          ><span style="color: rgb(171, 178, 191);"> count </span
-          ><span style="color: rgb(86, 182, 194);">=</span
-          ><span style="color: rgb(171, 178, 191);">
-            <span class="SpellE">appStateProvider.count</span></span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span
-          ><span style="color: rgb(198, 120, 221);">return</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(229, 192, 123);">Scaffold</span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            ><span class="SpellE">appBar</span></span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">AppBar</span></span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >title</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(229, 192, 123);">Text</span
-          ><span style="color: rgb(171, 178, 191);">(title),</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >body</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(229, 192, 123);">Center</span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >child</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(229, 192, 123);">Column</span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            ><span class="SpellE">mainAxisAlignment</span></span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">MainAxisAlignment</span
-            ><span style="color: rgb(171, 178, 191);">.center</span></span
-          ><span style="color: rgb(171, 178, 191);">,</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >children</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(86, 182, 194);">&lt;</span
-          ><span style="color: rgb(229, 192, 123);">Widget</span
-          ><span style="color: rgb(86, 182, 194);">&gt;</span
-          ><span style="color: rgb(171, 178, 191);">[</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span
-          ><span style="color: rgb(229, 192, 123);">Text</span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span
-          ><span style="color: rgb(152, 195, 121);"
-            >'You have pushed the button this many times:'</span
-          ><span style="color: rgb(171, 178, 191);">,</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span
-          ><span style="color: rgb(229, 192, 123);">Text</span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span></span
-          ><span style="color: rgb(152, 195, 121);">'$</span
-          ><i><span style="color: rgb(224, 108, 117);">count</span></i
-          ><span style="color: rgb(152, 195, 121);">'</span
-          ><span style="color: rgb(171, 178, 191);">,</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >style</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">Theme</span
-            ><span style="color: rgb(171, 178, 191);">.</span
-            ><span style="color: rgb(97, 175, 239);">of</span></span
-          ><span style="color: rgb(171, 178, 191);"
-            >(context).textTheme.headline4,</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >],</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            ><span class="SpellE">floatingActionButton</span></span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);"
-              >FloatingActionButton</span
-            ></span
-          ><span style="color: rgb(171, 178, 191);">(</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            ><span class="SpellE">onPressed</span></span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> () {</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            ><span class="SpellE"
-              >appStateProvider.<span style="color:#61AFEF"
-                >setCount</span
-              ></span
-            >(<span class="SpellE">appStateProvider.count</span> </span
-          ><span style="color: rgb(86, 182, 194);">+</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(209, 154, 102);">1</span
-          ><span style="color: rgb(171, 178, 191);">)</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >},</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >tooltip</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(152, 195, 121);">'Increment'</span
-          ><span style="color: rgb(171, 178, 191);">,</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >child</span
-          ><span style="color: rgb(198, 120, 221);">:</span
-          ><span style="color: rgb(171, 178, 191);"> </span
-          ><span style="color: rgb(229, 192, 123);">Icon</span
-          ><span style="color: rgb(171, 178, 191);">(</span
-          ><span class="SpellE"
-            ><span style="color: rgb(229, 192, 123);">Icons</span
-            ><span style="color: rgb(171, 178, 191);">.add</span></span
-          ><span style="color: rgb(171, 178, 191);">),</span>
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
-            >),</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>)</span
-          >
-        </p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"
-            ><span style="mso-spacerun:yes">&nbsp; </span>}</span
-          >
-        </p>
-
-        <p><span style="color: rgb(171, 178, 191);">}</span></p>
-
-        <p>
-          <span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span>
-        </p>
-      </div>
+        <div class="code">
+
+            <p><span style="color: rgb(198, 120, 221);">import</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(152, 195, 121);">'<span class="SpellE">package:flutter</span>/<span class="SpellE">material.dart</span>'</span><span style="color: rgb(171, 178, 191);">;<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(198, 120, 221);">import</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(152, 195, 121);">'<span class="SpellE">package:inherited_builder</span>/<span class="SpellE">annotations.dart</span>'</span><span style="color: rgb(171, 178, 191);">;<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(198, 120, 221);">part</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(152, 195, 121);">'<span class="SpellE">main.g.dart</span>'</span><span style="color: rgb(171, 178, 191);">;<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(198, 120, 221);">void</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(97, 175, 239);">main</span><span style="color: rgb(171, 178, 191);">() =&gt; </span><span class="SpellE"><span style="color: rgb(97, 175, 239);">runApp</span></span><span style="color: rgb(171, 178, 191);">(</span><span class="SpellE"><span style="color: rgb(229, 192, 123);">MyApp</span></span><span style="color: rgb(171, 178, 191);">());<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(198, 120, 221);">@Inherited</span><span style="color: rgb(171, 178, 191);">()<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(198, 120, 221);">class</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">AppState</span></span><span style="color: rgb(171, 178, 191);"> {<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span style="color: rgb(198, 120, 221);">final</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">int</span></span><span style="color: rgb(171, 178, 191);"> count;<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span class="SpellE"><span style="color: rgb(229, 192, 123);">AppState</span></span><span style="color: rgb(171, 178, 191);">({</span><span class="SpellE"><span style="color: rgb(229, 192, 123);">this</span><span style="color: rgb(171, 178, 191);">.count</span></span><span style="color: rgb(171, 178, 191);">});<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);">}<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span class="SpellE"><span style="color: rgb(229, 192, 123);">AppStateProvider</span><span style="color: rgb(171, 178, 191);">.</span><span style="color: rgb(97, 175, 239);">of</span></span><span style="color: rgb(171, 178, 191);">(context).</span><span class="SpellE"><span style="color: rgb(97, 175, 239);">setCount</span></span><span style="color: rgb(171, 178, 191);">(</span><span style="color: rgb(209, 154, 102);">42</span><span style="color: rgb(171, 178, 191);">)<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(198, 120, 221);">class</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">MyApp</span></span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(198, 120, 221);">extends</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">StatelessWidget</span></span><span style="color: rgb(171, 178, 191);"> {<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span style="color: rgb(198, 120, 221);">@override</span><span style="color: rgb(171, 178, 191);"><o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span style="color: rgb(229, 192, 123);">Widget</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(97, 175, 239);">build</span><span style="color: rgb(171, 178, 191);">(</span><span class="SpellE"><span style="color: rgb(229, 192, 123);">BuildContext</span></span><span style="color: rgb(171, 178, 191);"> context) {<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(198, 120, 221);">return</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">AppStateBuilder</span></span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>count</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(209, 154, 102);">0</span><span style="color: rgb(171, 178, 191);">,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>child</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">MaterialApp</span></span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>title</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(152, 195, 121);">'Inherited Builder demo'</span><span style="color: rgb(171, 178, 191);">,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>theme</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">ThemeData</span></span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="SpellE">primarySwatch</span></span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">Colors</span><span style="color: rgb(171, 178, 191);">.blue</span></span><span style="color: rgb(171, 178, 191);">,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>home</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">MyHomePage</span></span><span style="color: rgb(171, 178, 191);">(title</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(152, 195, 121);">'Inherited Builder demo'</span><span style="color: rgb(171, 178, 191);">),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>);<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);">}<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(198, 120, 221);">class</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">MyHomePage</span></span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(198, 120, 221);">extends</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">StatelessWidget</span></span><span style="color: rgb(171, 178, 191);"> {<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span style="color: rgb(198, 120, 221);">final</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(229, 192, 123);">String</span><span style="color: rgb(171, 178, 191);"> title;<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span class="SpellE"><span style="color: rgb(198, 120, 221);">const</span></span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">MyHomePage</span></span><span style="color: rgb(171, 178, 191);">({</span><span style="color: rgb(229, 192, 123);">Key</span><span style="color: rgb(171, 178, 191);"> key, </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">this</span><span style="color: rgb(171, 178, 191);">.title</span></span><span style="color: rgb(171, 178, 191);">}) </span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(229, 192, 123);">super</span><span style="color: rgb(171, 178, 191);">(key</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> key);<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span style="color: rgb(198, 120, 221);">@override</span><span style="color: rgb(171, 178, 191);"><o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span></span><span style="color: rgb(229, 192, 123);">Widget</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(97, 175, 239);">build</span><span style="color: rgb(171, 178, 191);">(</span><span class="SpellE"><span style="color: rgb(229, 192, 123);">BuildContext</span></span><span style="color: rgb(171, 178, 191);"> context) {<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(198, 120, 221);">final</span><span style="color: rgb(171, 178, 191);"> <span class="SpellE">appStateProvider</span> </span><span style="color: rgb(86, 182, 194);">=</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">AppStateProvider</span><span style="color: rgb(171, 178, 191);">.</span><span style="color: rgb(97, 175, 239);">of</span></span><span style="color: rgb(171, 178, 191);">(context);<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(198, 120, 221);">final</span><span style="color: rgb(171, 178, 191);"> count </span><span style="color: rgb(86, 182, 194);">=</span><span style="color: rgb(171, 178, 191);"> <span class="SpellE">appStateProvider.count</span>;<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(198, 120, 221);">return</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(229, 192, 123);">Scaffold</span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="SpellE">appBar</span></span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">AppBar</span></span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>title</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(229, 192, 123);">Text</span><span style="color: rgb(171, 178, 191);">(title),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>body</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(229, 192, 123);">Center</span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>child</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(229, 192, 123);">Column</span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="SpellE">mainAxisAlignment</span></span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">MainAxisAlignment</span><span style="color: rgb(171, 178, 191);">.center</span></span><span style="color: rgb(171, 178, 191);">,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>children</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(86, 182, 194);">&lt;</span><span style="color: rgb(229, 192, 123);">Widget</span><span style="color: rgb(86, 182, 194);">&gt;</span><span style="color: rgb(171, 178, 191);">[<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(229, 192, 123);">Text</span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(152, 195, 121);">'You have pushed the
+            button this many times:'</span><span style="color: rgb(171, 178, 191);">,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(229, 192, 123);">Text</span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(152, 195, 121);">'$</span><i><span style="color: rgb(224, 108, 117);">count</span></i><span style="color: rgb(152, 195, 121);">'</span><span style="color: rgb(171, 178, 191);">,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>style</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">Theme</span><span style="color: rgb(171, 178, 191);">.</span><span style="color: rgb(97, 175, 239);">of</span></span><span style="color: rgb(171, 178, 191);">(context).textTheme.headline4,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>],<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="SpellE">floatingActionButton</span></span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span class="SpellE"><span style="color: rgb(229, 192, 123);">FloatingActionButton</span></span><span style="color: rgb(171, 178, 191);">(<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="SpellE">onPressed</span></span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> () {<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="color: rgb(198, 120, 221);">final</span><span style="color: rgb(171, 178, 191);"> count </span><span style="color: rgb(86, 182, 194);">=</span><span style="color: rgb(171, 178, 191);"> <span class="SpellE">appStateProvider.count</span>
+            </span><span style="color: rgb(86, 182, 194);">+</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(209, 154, 102);">1</span><span style="color: rgb(171, 178, 191);">;<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="SpellE">appStateProvider.<span style="color:#61AFEF">setCount</span></span>(count);<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>},<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>tooltip</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(152, 195, 121);">'Increment'</span><span style="color: rgb(171, 178, 191);">,<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>child</span><span style="color: rgb(198, 120, 221);">:</span><span style="color: rgb(171, 178, 191);"> </span><span style="color: rgb(229, 192, 123);">Icon</span><span style="color: rgb(171, 178, 191);">(</span><span class="SpellE"><span style="color: rgb(229, 192, 123);">Icons</span><span style="color: rgb(171, 178, 191);">.add</span></span><span style="color: rgb(171, 178, 191);">),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>),<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>);<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);">}<o:p></o:p></span></p>
+            
+            <p><span style="color: rgb(171, 178, 191);"><o:p>&nbsp;</o:p></span></p>
+            
+            <p><o:p>&nbsp;</o:p></p>
+            
+            </div>
     </section>
 
     <input type="radio" id="result" name="tabs" />
