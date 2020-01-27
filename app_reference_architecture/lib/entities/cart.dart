@@ -21,7 +21,7 @@ class Cart {
   }
 
   bool hasProduct(Product product) => products.containsKey(product.id);
-  bool get isEmpty => products.isEmpty;
+  bool isEmpty() => products.isEmpty;
 }
 
 extension CartActions on CartProvider {

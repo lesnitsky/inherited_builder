@@ -118,7 +118,7 @@ class _ReceiptBottomsheetState extends State<ReceiptBottomsheet> {
 
     if (checkoutProvider.oldModel?.receipt == null &&
         checkoutProvider.model?.receipt != null &&
-        !cart.model.isEmpty) {
+        !cart.model.isEmpty()) {
       SchedulerBinding.instance.addPostFrameCallback((_) async {
         await showModalBottomSheet(
           context: context,

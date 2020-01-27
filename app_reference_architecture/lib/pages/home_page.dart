@@ -28,22 +28,22 @@ class _HomePageState extends State<HomePage>
     final productsProvider = ProductsProvider.of(context);
     final cart = CartProvider.of(context);
 
-    final products = productsProvider.entries;
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Fruit shop'),
         actions: <Widget>[
-          CountBadge(
-            count: cart.model.getTotalProductsCount(),
-          ),
+          CountBadge(count: cart.model.getTotalProductsCount()),
           IconButton(
-            icon: Row(
-              children: <Widget>[Icon(Icons.shopping_cart)],
-            ),
+            icon: Icon(Icons.shopping_cart),
             onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => CartPage()));
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ProductsBuilder(
+                    entries: [...fruits, ...vegetables],
+                    child: CartPage(),
+                  ),
+                ),
+              );
             },
           ),
         ],
@@ -65,10 +65,9 @@ class _HomePageState extends State<HomePage>
             flex: 1,
             child: ListView.builder(
               padding: const EdgeInsets.all(5),
-              itemCount: products.length,
+              itemCount: productsProvider.entries.length,
               itemBuilder: (context, index) {
-                final product = products[index];
-
+                final product = productsProvider.entries[index];
                 return ProductCard(product: product);
               },
             ),
