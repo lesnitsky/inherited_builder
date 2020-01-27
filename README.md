@@ -137,7 +137,7 @@ class ChildWidget extends StatelessWidget {
 
 ### React to changes
 
-`didChangeDepencies()` could be used to react on your model being changed with provider methods (e.g. `appStateProvider.setCount(newCount)`)
+You can use `didChangeDepencies()` to react to changes of your model (e.g. `appStateProvider.setCount(newCount)`)
 
 Example:
 
