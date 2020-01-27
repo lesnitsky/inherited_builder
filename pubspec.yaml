@@ -1,6 +1,6 @@
 name: inherited_builder
 description: dart-build integrated generator of inherited widget and provider for your dart model
-version: 1.0.0+1
+version: 1.0.0+2
 homepage: https://github.com/lesnitsky/inherited_builder
 
 environment:

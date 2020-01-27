@@ -2,9 +2,24 @@
 
 Autogenerate inherited widgets for flutter
 
-[![lesnitsky.dev](https://lesnitsky.dev/icons/shield.svg?hash=42)](https://lesnitsky.dev?utm_source=flutter_localstroage)
+[![lesnitsky.dev](https://lesnitsky.dev/icons/shield.svg?hash=42)](https://lesnitsky.dev?utm_source=inherited_builder)
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/inherited_builder.svg?style=social)](https://github.com/lesnitsky/inherited_builder)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_a.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_a)
+
+## ToC
+
+- [Motivation](#motivation)
+- [App Reference Architecture](#app-reference-architecture)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Define your model](#define-your-model)
+  - [Execute build_runner](#execute-build-runner)
+  - [Place Builder in your widget tree](#place-builder-in-your-widget-tree)
+  - [Access values using Provider](#access-values-using-provider)
+  - [Access instance of your model using Provider](#access-instance-of-your-model-using-provider)
+  - [React to changes](#react-to-changes)
+  - [Define actions on your model](#define-actions-on-your-model)
+- [License](#license)
 
 ## Motivation
 
@@ -195,6 +210,6 @@ appStateProvider.increment();
 
 MIT
 
-[![lesnitsky.dev](https://lesnitsky.dev/icons/shield.svg?hash=42)](https://lesnitsky.dev?utm_source=flutter_localstroage)
+[![lesnitsky.dev](https://lesnitsky.dev/icons/shield.svg?hash=42)](https://lesnitsky.dev?utm_source=inherited_builder)
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/inherited_builder.svg?style=social)](https://github.com/lesnitsky/inherited_builder)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_a.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_a)
