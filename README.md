@@ -43,9 +43,13 @@ dev_dependencies:
 
 ### Define your model
 
+`app_state.dart`
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:inherited_builder/annotations.dart';
+
+part 'app_state.g.dart'
 
 @Inherited()
 class AppState {
